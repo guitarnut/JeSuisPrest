@@ -1,0 +1,107 @@
+| <?php
+|   session_start();
+|   require_once(__DIR__.'/includes/processImage.php');
+| ?>
+doctype
+html(lang="en")
+head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    title Jes Sui Prest Dev
+    script(src="vendor/jquery/dist/jquery.min.js")
+    script(src="vendor/greensock/src/minified/TweenLite.min.js")
+    script(src="vendor/greensock/src/minified/plugins/CSSPlugin.min.js")
+    script(src="vendor/greensock/src/minified/utils/Draggable.min.js")
+    script(src="vendor/svgeezy/svgeezy.min.js")
+    script(src='js/STARZ.startup.js')
+    script(src='js/UTIL.url.js')
+    script(src='js/UI.stepnav.js')
+    script(src='js/STARZ.validateform.js')
+    script(src='js/STARZ.photoeditor.js')
+    script(src='js/STARZ.customelements.js')
+    script(src='js/STARZ.social.js')
+    link(rel="stylesheet", type="text/css", href="css/css.css")
+body.fullBackground
+    div#wrapper
+        p.center
+            img#jspHeader(src="img/text_jsp.svg", alt="Je Suis Prest", width="380", height="55")
+        p.prompt.center.medium Please rotate your device or expand your browser.<br>
+            img(src="img/rotate_icon.svg", alt="Rotate Device", width="220", height="210")
+        | <?php if ($_SESSION['step'] == 1 || isset($_GET['new'])) { ?>
+        div#screenOne
+            form(method='post', action!='<?php __DIR__ ?>index.php', id='imgForm', enctype='multipart/form-data')
+                p.center.large Select an image that shows the world you're ready for Outlander.
+                p.center.medium Tip: Choose an image that is well-lit.
+                p.center
+                    img#pseudo_upload.buttonPad.hotspot(src="img/button_select.svg", alt="Select Image", height="64", width="220")
+                p.center
+                    img#pseudo_submit.buttonPad.hotspot(src="img/button_next.svg", alt="Next", height="64", width="220")
+                div.hiddenDiv
+                    input#img_upload(type='file', name='img_upload')
+                div.hiddenDiv
+                    input#img_upload_submit(type='submit', name='upload_form_submitted')
+            p#errors.center.medium
+            script(type='text/javascript').
+                STARZ.ValidateForm.init();
+                STARZ.CustomElements.screenOne();
+        | <?php } ?>
+        | <?php if ($_SESSION['step'] == 2 && !isset($_GET['new'])) { ?>
+        div#screenTwo
+            div#photoUIWrapper
+                div#stepWrapper(ui-stepwrapper)
+                    div#step1.step(ui-step)
+                        p.center Enlarge or reduce your image. Slide it around the frame.
+                        p.center
+                            img#scaleUp.UIelement.hotspot.button1(src="img/ui_enlarge.svg", alt="")
+                            img#scaleDown.UIelement.hotspot.button2(src="img/ui_reduce.svg", alt="")
+                            img.UIelement.next(src="img/ui_next.svg", alt="", ui-next)
+                    div#step2.step(ui-step)
+                        p.center Chose light or dark text, whichever is more readable.
+                        p.center
+                            img.UIelement.prev(src="img/ui_prev.svg", alt="", ui-prev)
+                            img.UIelement.textLight.hotspot(src="img/ui_lighttext.svg", alt="", data-text="1")
+                            img.UIelement.textDark.hotspot(src="img/ui_darktext.svg", alt="", data-text="2")
+                            img.UIelement.next(src="img/ui_next.svg", alt="", ui-next)
+                    div#step3.step(ui-step)
+                        p.center Adjust the visibility of the text.
+                        p.center
+                            img.UIelement.prev(src="img/ui_prev.svg", alt="", ui-prev)
+                            img.UIelement.opacityDark.hotspot(src="img/ui_opacitydown.svg", alt="", data-opacity="1")
+                            img.UIelement.opacityLight.hotspot(src="img/ui_opacityup.svg", alt="", data-opacity="-1")
+                            img.UIelement.next(src="img/ui_next.svg", alt="", ui-next)
+                    div#step4.step(ui-step)
+                        p.center Likey your image?
+                        p.center
+                            img.UIelement.prev(src="img/ui_prev.svg", alt="", ui-prev)
+                            img#pseudo_save.UIelement.hotspot(src="img/ui_save.svg", alt="Save Image")
+                            a(href='index.php?new=true')
+                                img.buttonPad.hotspot(src="img/button_change.svg", alt="Change Image", height="32", width="110")
+            div#photoEditorContainer
+                div#photoEditor
+                    div#imgContainer.fixedElement(data-image!="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>")
+                        img#userImage(src='')
+                    div#frameContainer.fixedElement
+                        img#imageFrame(src="overlays/frame_lightText_65.png", width="400", height="520")
+                div.hiddenDiv
+                    button#img_save.save.center.uiElement Save
+            script(type='text/javascript').
+                STARZ.PhotoEditor.setImage();
+                STARZ.CustomElements.screenTwo();
+                UI.StepNav.init('#photoUIWrapper');
+        | <?php } ?>
+        | <?php if ($_SESSION['step'] == 3 && !isset($_GET['new'])) { ?>
+        div#screenThree
+            p.center.large Share your image and show the world you're ready for Outlander!
+            p.center
+                img#shareFB.UIelement.hotspot(src="img/button_sm_fb.svg", alt="Share on Facebook", height="64", width="64", data-image!="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>")
+                img#shareTW.UIelement.hotspot(src="img/button_sm_tw.svg", alt="Share on Twitter", height="64", width="64", data-image!="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>")
+                img#createNew.UIelement.hotspot(src="img/button_createnew.svg", alt="New Image", height="64", width="220")
+            p.center
+                img#finalImage(src!="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>", width="400", height="520", alt="Je Suis Prest")
+            script(type="text/javascript").
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                STARZ.CustomElements.screenThree();
+                STARZ.Social.init();
+                var STARZ_img =  UTIL.getPath() + "<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>";
+        | <?php } ?>
+    script(src="js/analytics.js")

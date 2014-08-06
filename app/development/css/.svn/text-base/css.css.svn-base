@@ -1,0 +1,161 @@
+body {
+    width: 100%;
+    font-family: 'Garamond', 'Times', serif;
+}
+
+/* ---------------------------------------------------------------
+GENERAL
+---------------------------------------------------------------- */
+
+div {
+    box-sizing: border-box;
+}
+
+img {
+    border: none;
+}
+
+.fullBackground {
+    background-image: url(../img/bg_plate.jpg);
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.fixedElement {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#wrapper {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.buttonPad {
+    padding: 5px;
+}
+
+/* ---------------------------------------------------------------
+TYPE
+---------------------------------------------------------------- */
+
+p {
+    margin: 5px;
+}
+
+.large {
+    font-size: 28px;
+    line-height: 1.4em;
+}
+
+.medium {
+    font-size: 18px;
+    line-height: 1.4em;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------
+FORM
+---------------------------------------------------------------- */
+
+.hiddenDiv {
+    height: 0;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------------
+PHOTO EDITOR
+---------------------------------------------------------------- */
+
+#photoEditor {
+    position: relative;
+    width: 400px;
+    height: 520px;
+    background-image: url(../img/template_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px auto;
+    overflow: hidden
+}
+
+#imgContainer {
+    width: 400px;
+    height: 520px
+}
+
+#frameContainer {
+    z-index: top-index-10;
+    width: 400px;
+    height: 520px
+}
+
+#photoUIWrapper {
+    width: 400px;
+    margin: 10px auto;
+    background: url(../img/bg_ui.png) top left no-repeat;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.photoUIElement {
+    background-image: url(../img/ui_photo_out.jpg);
+    width: 60px;
+    height: 60px;
+    margin: 3px;
+    display: inline-block
+}
+
+.photoUI:hover {
+    background-image: url(../img/ui_photo_over.jpg)
+}
+
+.button2 {
+    background-position: -60px
+}
+
+.button3 {
+    background-position: -120px
+}
+
+.button4 {
+    background-position: -180px
+}
+
+.button5 {
+    background-position: -240px
+}
+
+#colorEditor {
+    width: 400px;
+    margin: 10px auto
+}
+
+.swatch {
+    width: 60px;
+    height: 60px;
+    margin: 3px;
+    display: inline-block
+}
+
+.color1 {
+    background-color: #3e8f3e
+}
+
+.color2 {
+    background-color: #a94442
+}
+
+/* ---------------------------------------------------------------
+SHARE UI
+---------------------------------------------------------------- */
+
+#shareImage {
+    position: relative;
+    width: 400px;
+    height: 520px;
+    margin: 0 auto;
+}

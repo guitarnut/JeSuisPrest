@@ -1,0 +1,23 @@
+{
+  "name": "photoApp",
+  "version": "0.0.0",
+  "authors": [
+    "Rick Henley <creative@theguitarnut.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/development/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "greensock": "~1.11.6",
+    "jquery": "~2.1.0"
+  },
+  "devDependencies": {
+    "svgeezy": "~1.0.0"
+  }
+}

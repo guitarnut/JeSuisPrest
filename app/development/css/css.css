@@ -1,0 +1,305 @@
+body {
+    width: 95%;
+    margin: 0 auto;
+    font-family: 'Garamond', 'Times', serif;
+}
+
+/* ---------------------------------------------------------------
+ELEMENTS
+---------------------------------------------------------------- */
+
+div {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    border: none;
+}
+
+/* ---------------------------------------------------------------
+DESIGN
+---------------------------------------------------------------- */
+
+#jspHeader {
+    width: 400px;
+}
+
+#wrapper {
+    width: 100%;
+    margin: 40px auto;
+}
+
+#loading {
+    background-color: white;
+    z-index: 10000;
+    display: none;
+}
+
+#legal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: url(../img/white_bg.png) top left repeat;
+}
+
+.centerElement {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+}
+
+.fullBackground {
+    background-image: url(../img/bg_plate.jpg);
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.fullBackgroundLight {
+    background-image: url(../img/bg_plate_light.jpg);
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.fixedElement {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.absoluteElement {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.buttonPad {
+    padding: 5px;
+}
+
+.hotspot {
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------
+TYPE
+---------------------------------------------------------------- */
+
+p {
+    margin: 5px;
+    line-height: 1.4em;
+}
+
+a {
+    color: inherit;
+}
+
+.longText {
+    text-align: justify;
+    margin: 5px 20px 5px 20px;
+}
+
+.large {
+    font-size: 28px;
+}
+
+.medium {
+    font-size: 18px;
+}
+
+.small {
+    font-size: 14px;
+}
+
+.center {
+    text-align: center;
+}
+
+.prompt {
+    display: none;
+}
+
+/* ---------------------------------------------------------------
+FORM
+---------------------------------------------------------------- */
+
+.hiddenDiv {
+    height: 0;
+}
+
+#img_upload {
+    width: 20%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 10px;
+}
+
+#img_upload_submit {
+    width: 20%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 10px;
+}
+
+/* ---------------------------------------------------------------
+PHOTO EDITOR
+---------------------------------------------------------------- */
+
+#moveIcon {
+    width: 50px;
+    height: auto;
+    z-index: 5000;
+    overflow: visible;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -25px;
+}
+
+.photoSize {
+    width: 420px;
+    height: 520px;
+}
+
+#photoEditor {
+    background-image: url(../img/template_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+#frameContainer {
+    z-index: 1000;
+}
+
+#photoUIWrapper {
+    width: 400px;
+    height: 110px;
+    margin: 10px auto;
+}
+
+#stepWrapper {
+    width: 1600px;
+    height: 200px;
+}
+
+.step {
+    width: 400px;
+    height: 200px;
+    float: left;
+}
+
+.next {
+    padding-left: 20px;
+}
+
+.prev {
+    padding-right: 20px;
+}
+
+.UIelement {
+    width: 60px;
+    height: 60px;
+    margin: 3px;
+    display: inline-block
+}
+
+.UIelementLarge {
+    width: 100px;
+    height: 100px;
+    margin: 3px;
+}
+
+/* ---------------------------------------------------------------
+MOBILE
+---------------------------------------------------------------- */
+
+/* handle landscape orientation on small devices */
+@media screen and (max-height: 400px) {
+
+    .prompt {
+        display: inherit;
+    }
+
+    #screenOne, #screenTwo, #screenThree {
+        display: none;
+    }
+}
+
+/* handle sizing on small screens */
+@media screen and (max-width: 450px) {
+
+    #jspHeader {
+        width: 100%;
+    }
+
+    .large {
+        font-size: 24px;
+        line-height: 1.4em;
+    }
+
+    .medium {
+        font-size: 14px;
+        line-height: 1.4em;
+    }
+
+    .prompt {
+        /* display: inherit; */
+    }
+
+    #moveIcon {
+        width: 50px;
+        height: auto;
+        z-index: 5000;
+        overflow: visible;
+        top: 50%;
+        left: 50%;
+        margin: -50px 0 0 -25px;
+    }
+
+    .photoSize {
+        width: 300px;
+        height: 390px;
+    }
+
+    #photoEditor {
+        background-image: url(../img/template_bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+    }
+
+    #photoUIWrapper {
+        width: 300px;
+        height: 80px;
+        margin: 10px auto;
+    }
+
+    #stepWrapper {
+        width: 1200px;
+        height: 200px;
+    }
+
+    .step {
+        width: 300px;
+        height: 200px;
+        float: left;
+    }
+
+    .UIelement {
+        width: 40px;
+        height: 40px;
+        margin: 3px;
+        display: inline-block
+    }
+
+    .UIelementLarge {
+        width: 100px;
+        height: 100px;
+        margin: 3px;
+    }
+}

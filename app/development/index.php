@@ -6,7 +6,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Je Suis Prest</title>
+    <title>Je Suis Prest </title>
     <script src="vendor/jquery/dist/jquery.min.js"></script>
     <script src="vendor/greensock/src/minified/TweenLite.min.js"></script>
     <script src="vendor/greensock/src/minified/plugins/CSSPlugin.min.js"></script>
@@ -77,13 +77,13 @@
       <?php if ($_SESSION['step'] == 3 && !isset($_GET['new'])) { ?>
       <div id="screenThree">
         <p class="center large">Share your image and show the world you're ready for Outlander!</p>
-        <p class="center"><img id="shareFB" src="img/ui_facebook.svg" alt="Share on Facebook" height="64" width="64" data-image="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>" class="UIelement hotspot"><img id="shareTW" src="img/ui_twitter.svg" alt="Share on Twitter" height="64" width="64" data-image="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>" class="UIelement hotspot"><img id="createNew" src="img/ui_replay.svg" alt="New Image" height="64" width="220" class="UIelement hotspot"></p>
-        <p class="center"><img id="finalImage" src="<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>" alt="Je Suis Prest" class="photoSize"></p>
+        <p class="center"><img id="shareFB" src="img/ui_facebook.svg" alt="Share on Facebook" height="64" width="64" data-image="<?php echo $_SESSION['imgPath'].'?'.rand(0, 100000); ?>" class="UIelement hotspot"><img id="shareTW" src="img/ui_twitter.svg" alt="Share on Twitter" height="64" width="64" data-image="<?php echo $_SESSION['imgPath'].'?'.rand(0, 100000); ?>" class="UIelement hotspot"><img id="createNew" src="img/ui_replay.svg" alt="New Image" height="64" width="220" class="UIelement hotspot"></p>
+        <p class="center"><img id="finalImage" src="<?php echo $_SESSION['imgPath'].'?'.rand(0, 100000); ?>" alt="Je Suis Prest" class="photoSize"></p>
         <script type="text/javascript">
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
           STARZ.CustomElements.screenThree();
           STARZ.Social.init();
-          var STARZ_img =  UTIL.getPath() + "<?php echo $_SESSION['newPath'].'?'.rand(0, 100000); ?>";
+          var STARZ_img =  "<?php echo $_SESSION['imgPath'].'?'.rand(0, 100000); ?>";
         </script>
       </div><?php } ?>
     </div>

@@ -28,8 +28,8 @@ window.fbAsyncInit = function() {
             'method': 'feed',
             'name': 'Je Suis Prest',
             'caption': 'I am ready!',
-            'description': 'Show the world you\'re ready: http://stage.outlandercommunity.com/photo/',
-            'link': 'http://stage.outlandercommunity.com/photo'
+            'description': 'Show the world you\'re ready: http://outlandercommunity.com/photo/',
+            'link': 'http://outlandercommunity.com/photo'
         };
 
         var tw = {
@@ -68,7 +68,7 @@ window.fbAsyncInit = function() {
         function shareTW() {
             //PHP value appended to HTML element
             var img = twitter.getAttribute("data-image");
-            window.open('https://twitter.com/intent/tweet?url='+UTIL.getPath()+img+'&text=' + encodeURIComponent(tw.text+' '+tw.hashtags));
+            window.open('https://twitter.com/intent/tweet?url='+img+'&text=' + encodeURIComponent(tw.text+' '+tw.hashtags));
         }
 
         return {
